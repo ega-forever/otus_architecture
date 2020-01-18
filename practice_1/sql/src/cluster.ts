@@ -16,7 +16,6 @@ const dbInstance = new Database();
 
 const sem = semaphore(1);
 
-
 // init mokka instance, bootstrap other nodes, and call the askCommand
 const initMokka = async () => {
   const index = parseInt(process.env.INDEX, 10);
@@ -154,41 +153,6 @@ const update = async (mokka: Mokka, command: string) => {
       console.log(res.err);
 
   }
-
-
 };
 
-/*
-// add new log
-const addLog = async (mokka, key, value) => {
-  await mokka.logApi.push(key, { value, nonce: Date.now() });
-};
-
-// get log by index
-const getLog = async (mokka, index) => {
-  const entry = await mokka.getDb().getEntry().get(parseInt(index, 10));
-  mokka.logger.info(entry);
-};
-
-// get info of current instance
-const getInfo = async (mokka) => {
-  const info = await mokka.getDb().getState().getInfo();
-  mokka.logger.info(info);
-  const info2 = mokka.getLastLogState();
-  console.log({ ...info2, state: mokka.state });
-};
-
-const getNodes = async (mokka: Mokka) => {
-  const keys = Array.from(mokka.nodes.keys());
-  for (let index = 0; index < mokka.nodes.size; index++) {
-    console.log(`node ${ index } / ${ mokka.nodes.get(keys[index]).address } with state ${ mokka.nodes.get(keys[index]).getLastLogState().index }`);
-  }
-};
-
-const resetNode = async (mokka: Mokka, index) => {
-  const keys = Array.from(mokka.nodes.keys());
-  mokka.nodes.get(keys[index]).setLastLogState(new StateModel());
-};
-*/
-
-initMokka();
+module.exports = initMokka();
