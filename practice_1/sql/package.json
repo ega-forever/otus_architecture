@@ -27,7 +27,6 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.5",
     "semaphore": "^1.1.0",
-    "sqlite3": "^4.1.1",
-    "sqlite3-transactions": "0.0.5"
+    "sqlite3": "^4.1.1"
   }
 }
