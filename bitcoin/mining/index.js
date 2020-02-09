@@ -25,14 +25,14 @@ const init = async () => {
   const attempt = new BlockTemplate(block.toHeaders().toJSON());
   const headerRaw = Buffer.from(testData.blockHex.substr(0, 160), 'hex');
 
-  headerRaw.writeUInt32LE(block.nonce, 76, true);
+  headerRaw.writeUInt32LE(block.nonce, 76, true); // here nonce need to be found
 
   const target = attempt.target;
 
   const doubleSha256Hash = crypto.createHash('sha256').update(crypto.createHash('sha256').update(headerRaw).digest()).digest();
 
-  console.log(doubleSha256Hash.toString('hex'))
-  console.log(target.toString('hex'))
+  console.log(doubleSha256Hash.toString('hex'));
+  console.log(target.toString('hex'));
 
   const result = rcmp(doubleSha256Hash, target);
 
