@@ -1,6 +1,5 @@
 import zookeeper from 'node-zookeeper-client';
 import { promisify } from 'util';
-import * as path from 'path';
 
 export default class Lock {
 

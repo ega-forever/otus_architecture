@@ -27,7 +27,7 @@ const initMokka = async () => {
     uris.push(`tcp://127.0.0.1:${ config.nodes[index1].consensus }/${ config.nodes[index1].publicKey }`);
   }
 
-  const logger = bunyan.createLogger({ name: 'mokka.logger', level: 30 });
+  const logger = bunyan.createLogger({ name: 'mokka.logger', level: 60 });
 
   const mokka = new TCPMokka({
     address: `tcp://127.0.0.1:${ config.nodes[index].consensus }/${ config.nodes[index].publicKey }`,
@@ -117,6 +117,10 @@ const askCommand = (rl, mokka) => {
       command.trim().toUpperCase().indexOf('DELETE') === 0
     ) {
       await update(mokka, command);
+    }
+
+    if(command.trim().toLowerCase() === 'get_state'){
+      console.log(`is leader: ${mokka.state === MokkaStates.LEADER}`);
     }
 
     askCommand(rl, mokka);
