@@ -3,12 +3,10 @@ const bitcoin = require('bitcoinjs-lib'),
   bip32 = require('bip32');
 
 const keyPairAlice = bitcoin.ECPair.makeRandom();
-
 console.log(`hex key: ${keyPairAlice.privateKey.toString('hex')}`);
 
 
 const mnemonic = bip39.generateMnemonic();
-
 console.log(`mnemonic: ${mnemonic}`);
 
 const seed = bip39.mnemonicToSeedSync(mnemonic);

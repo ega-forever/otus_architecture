@@ -15,6 +15,11 @@ module.exports = {
     development: {
       provider: ganache.provider(),
       network_id: '*'       // Any network (default: none)
+    },
+    local: {
+      host: 'localhost',
+      port: 8545,
+      network_id: '*'       // Any network (default: none)
     }
   },
 

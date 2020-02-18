@@ -137,6 +137,7 @@ const init = async () => {
   const decodedMessage = decodedTx.outs[1].script.toString().substr(2);
 
   assert(decodedMessage === message);
+  console.log(decodedMessage);
   await node.close();
 };
 
