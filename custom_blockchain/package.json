@@ -1,0 +1,27 @@
+{
+  "name": "decentralized-ganache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/server.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axon": "^2.0.3",
+    "bunyan": "^1.8.12",
+    "detect-port": "^1.3.0",
+    "ganache-core": "^2.5.5",
+    "mokka": "^0.5.3",
+    "semaphore": "^1.1.0",
+    "web3": "^1.0.0-beta.55"
+  },
+  "devDependencies": {
+    "tweetnacl": "^1.0.1",
+    "@types/node": "*",
+    "ts-node": "^8.4.1",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.1"
+  }
+}
